@@ -12,8 +12,12 @@ Rails.application.routes.draw do
 
   # アプリケーションのトップページ（ルートURL /）にアクセスした際、StaticPagesControllerのtopアクションを呼び出す設定
   # ルートURLの割り当てをする
-  root 'static_pages#top'
-
+  root "static_pages#top"
+  # ユーザーの新規作成（create）と入力画面を表示(new)のルートのみを生成
+  resources :users, only: %i[ new create ] do
+    # この話しかけてもいいよステータスが常にユーザーに紐づいているからネストしてる
+    resource :status
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end
