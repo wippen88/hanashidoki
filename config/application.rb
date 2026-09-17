@@ -23,5 +23,17 @@ module Myapp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Don't generate system test files.
+    config.generators.system_tests = nil
+    # 不要なファイルが生成されるのを防ぎ、開発効率を向上させる
+    config.generators do |g|
+      # ルーティングの記述を加えないようにする
+      g.skip_routes true
+      # ヘルパーファイルを自動生成しないようにする
+      g.helper false
+      # テストフレームワークを使わないようにする
+      g.test_framework nil
+    end
   end
 end
