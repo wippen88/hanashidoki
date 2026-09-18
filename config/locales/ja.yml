@@ -4,6 +4,9 @@ ja:
       title: ハナシドキ
       login: ログインする
       create: 新規登録する
+      catchcopy: 「今、話しかけてもいい？」を、聞かなくてもわかる。
+      description_first: ハナシドキは、相手の今の状況をステータスで共有して、
+      description_second: 話しかけるタイミングを見つけやすくするアプリです。
   user_sessions:
     new:
       title: ログイン画面
@@ -18,6 +21,12 @@ ja:
   users:
     new:
       title: ユーザー登録
+      last_name: 姓
+      first_name: 名
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: パスワード（確認用）
+      registration: 登録する
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
