@@ -18,6 +18,15 @@ Rails.application.routes.draw do
     # この話しかけてもいいよステータスが常にユーザーに紐づいているからネストしてる
     resource :status
   end
+
+  # ログイン画面を表示するルート
+  get "login", to: "user_sessions#new"
+  # ログイン処理をするルート
+  post "login", to: "user_sessions#create"
+  # ログアウト処理をするルート
+  # ログアウトという操作は、ログインセッションを破棄する操作だからDELETEを使う
+  delete "logout", to: "user_sessions#destroy"
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
