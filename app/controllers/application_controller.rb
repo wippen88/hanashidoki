@@ -35,5 +35,4 @@ class ApplicationController < ActionController::Base
   def require_login
     redirect_to login_path, danger: t('defaults.flash_message.require_login') unless logged_in?
   end
-
 end
