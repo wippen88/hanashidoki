@@ -13,9 +13,12 @@ class User < ApplicationRecord
   validates :busy_status, presence: true
 
   # パスワードは３文字以上
-  # if: -> { new_record? || changes[:crypted_password] }はこの条件の時だけバリデーションを実行してね　という意味→新規レコード作成もしくはpassword_digestカラムが更新される時のみ適用
+  # if: -> { new_record? || changes[:crypted_password] }はこの条件の時だけバリデーションを実行してね　という意味→新規レコード作成もしくはcrypted_passwordカラムが更新される時のみ適用
   # 今後パスワード変更画面を実装する可能性があるので入れておく
+  # パスワードは３文字以上
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
+  # passwordとpassword_confirmationが一致しているか確認
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
+  # passwordとpassword_confirmationは空欄を禁止
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 end
