@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       redirect_to user_status_path, success:t('create.success')
     else
       flash.now[:danger]
-      render :new, status: :unprosessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
