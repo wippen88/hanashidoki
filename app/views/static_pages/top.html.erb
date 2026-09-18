@@ -1,14 +1,10 @@
 <div class="container">
   <div>
-    <p>「今、話しかけてもいい？」を、聞かなくてもわかる。</p>
-    <p>
-      ハナシドキは、相手の今の状況をステータスで共有して、<br>
-      話しかけるタイミングを見つけやすくするアプリです。
-    </p>
-
-  <div/>
+    <p><%= t('.description_first') %></p>
+    <p><%= t('.description_second') %></p>
+  </div>
   <div>
-    <%= link_to t('.login'), login_path %>
-    <%= link_to t('.create'), new_user_path %>
+    <%= link_to t('.login'), login_path, class: "border border-solid" %>
+    <%= link_to t('.create'), new_user_path, class: "border border-solid" %>
   </div>
 </div>
