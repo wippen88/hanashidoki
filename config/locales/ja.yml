@@ -7,6 +7,8 @@ ja:
       catchcopy: 「今、話しかけてもいい？」を、聞かなくてもわかる。
       description_first: ハナシドキは、相手の今の状況をステータスで共有して、
       description_second: 話しかけるタイミングを見つけやすくするアプリです。
+  flash_messages:
+    require_login: ログインしてください
   user_sessions:
     new:
       title: ログイン画面
