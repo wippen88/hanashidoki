@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_one :status, dependent: :destroy
 
   # Emailアドレス、姓名、ステータスは必須項目（空欄を許さない）
-  validates :email, presence: true
+  validates :email, presence: true , uniqueness: true
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :busy_status, presence: true
