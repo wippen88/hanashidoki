@@ -57,3 +57,5 @@ ja:
               too_short: "は%{count}文字以上で入力してください"
             password_confirmation:
               blank: を入力してください
+  header:
+    logout: ログアウトする
