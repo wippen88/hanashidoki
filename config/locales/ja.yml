@@ -39,6 +39,9 @@ ja:
         now_status: 今のステータス
         status_message: 今の状況をひとこと（30文字まで）
         status_change: ステータスを変更する
+      update:
+        success: 更新が完了しました
+        failure: 更新に失敗しました
   statuses:
     index:
       status_edit: 編集する

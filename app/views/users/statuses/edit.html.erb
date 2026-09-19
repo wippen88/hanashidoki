@@ -1,0 +1,22 @@
+<div class="container">
+  <%= form_with model: @status do |f| %>
+    <div>
+      <%= f.label t('.now_status') %>
+      <!-- Status.busy_statuses（enumの中身すべてを取得する書き方）の中身はハッシュなので、引数は2つ指定 -->
+      <!--  {"available" => 0, "slightly_available" => 1, "busy" => 2, "away" => 3} -->
+      <% Status.busy_statuses.each_key do |key| %>
+        <!-- busy_statusにkeyを値として設定するラジオボタン -->
+        <%= f.radio_button :busy_status, key %>
+        <!-- ラジオボタンのラベルは、users_helperに記載したstatus_labelメソッドから引っ張ってくる -->
+        <%= f.label key, status_label(key) %>
+      <% end %>
+    </div>
+    <div>
+      <%= f.label t('.status_message') %>
+      <%= f.text_area :status_message, class: "border border-solid" %>
+    </div>
+    <div>
+        <%= f.submit t('.status_change'), class: "border border-solid" %>
+    </div>
+  <% end %>
+</div>

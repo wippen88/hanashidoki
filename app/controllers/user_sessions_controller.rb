@@ -27,5 +27,4 @@ class UserSessionsController < ApplicationController
     # 次のページへのリダイレクトをGETに切り替えることで、同じPOST処理をもう一度送信するような状況を避けやすくする
     redirect_to root_path, status: :see_other, success: t('.success')
   end
-
 end

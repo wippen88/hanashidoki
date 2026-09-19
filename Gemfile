@@ -42,6 +42,10 @@ gem 'sorcery'
 # jsonのバージョンを2.7.2に設定→指定しないと3.0.2になる
 gem "json", "2.7.2"
 
+# 「View（画面）に関する表示ロジック」をモデルから切り離してきれいに整理するため、デコレーターを導入する
+gem "draper", "4.0.2"
+
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
