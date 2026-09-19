@@ -33,6 +33,12 @@ ja:
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
+    statuses:
+      edit:
+        name: 名前
+        now_status: 今のステータス
+        status_message: 今の状況をひとこと（30文字まで）
+        status_change: ステータスを変更する
   statuses:
     index:
       status_edit: 編集する
