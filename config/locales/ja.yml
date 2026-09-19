@@ -30,3 +30,28 @@ ja:
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
+  activerecord:
+    # Userモデルの「項目名」を日本語にする
+    attributes:
+      user:
+        email: メールアドレス
+        last_name: 姓
+        first_name: 名
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+    # Userモデルの「エラー内容」を日本語にする
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: を入力してください
+            last_name:
+              blank: を入力してください
+            first_name:
+              blank: を入力してください
+            password:
+              blank: を入力してください
+              too_short: "は%{count}文字以上で入力してください"
+            password_confirmation:
+              blank: を入力してください
