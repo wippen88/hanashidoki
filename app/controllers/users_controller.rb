@@ -10,7 +10,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    
     if @user.save
+      # 登録した瞬間から、このブラウザではログイン済みとする
+      auto_login(@user)
+
       # ユーザーの登録に成功したら、全ユーザーのステータス一覧へ遷移する
       redirect_to statuses_path, success:t('.success')
     else
