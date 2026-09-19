@@ -48,17 +48,20 @@ ja:
       title: ステータス一覧
       status_edit: 編集する
   activerecord:
-    # Userモデルの「項目名」を日本語にする
     attributes:
+      # Userモデルの「項目名」を日本語にする
       user:
         email: メールアドレス
         last_name: 姓
         first_name: 名
         password: パスワード
         password_confirmation: パスワード（確認用）
-    # Userモデルの「エラー内容」を日本語にする
+      # Statusモデルの「項目名」を日本語にする
+      status:
+        status_message: 今の状況をひとこと
     errors:
       models:
+        # Userモデルの「エラー内容」を日本語にする
         user:
           attributes:
             email:
@@ -72,5 +75,10 @@ ja:
               too_short: "は%{count}文字以上で入力してください"
             password_confirmation:
               blank: を入力してください
+        # Statusモデルの「エラー内容」を日本語にする
+        status:
+          attributes:
+            status_message:
+              too_long: "は%{count}文字以内で入力してください"
   header:
     logout: ログアウトする
