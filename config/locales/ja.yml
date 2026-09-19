@@ -15,6 +15,7 @@ ja:
       email: メールアドレス
       password: パスワード
       login: ログインする
+      create: 新規登録はこちら
     create:
       success: ログインしました
       failure: ログインに失敗しました
