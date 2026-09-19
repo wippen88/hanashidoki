@@ -11,9 +11,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_status_path, success:t('.success')
+      # ユーザーの登録に成功したら、全ユーザーのステータス一覧へ遷移する
+      redirect_to statuses_path, success:t('.success')
     else
-      flash.now[:danger]
+      # ユーザー登録に失敗したら画面は遷移せずに、HTTPリクエストを200（成功）から422(内容の不備によるエラー)にに変更する
+      flash.now[:danger] = t('.failure')
       render :new, status: :unprocessable_entity
     end
   end
