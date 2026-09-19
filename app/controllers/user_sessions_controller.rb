@@ -8,11 +8,11 @@ class UserSessionsController < ApplicationController
   def create
     # そのメールアドレスのUserを探して、見つかったらパスワード認証する
     # Userが見つからなかったらnilを返す
-    @user = User.find_by(email: params[:email])&.authenticate(params[:password])
+    # @user = User.find_by(email: params[:email])&.authenticate(params[:password])
 
-    if @user
-      session[:user_id] = @user.id
-      redirect_to status_path, success: t('create.success')
+    if login(params[:email], params[:password])
+      # session[:user_id] = @user.id
+      redirect_to statuses_path, success: t('create.success')
     else
       # renderは、別のアクションを経由せず、指定したViewを表示する（アクション自体は実行しない）
       flash.now[:danger] = t('create.failure')
