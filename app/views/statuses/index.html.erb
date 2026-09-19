@@ -1,4 +1,9 @@
 <div class="container">
+  <!-- viewで特定の名前を付与して、タイトルの内容を預ける -->
+  <%= content_for(:title, t(".title")) %>
+
+  <h1><%= t('.title') %></h1>
+
   <!-- StatusesControllerで取得した各ユーザーの話しかけていいステータスを、ループで表示する -->
   <% @statuses.each do |status| %>
     <div>
