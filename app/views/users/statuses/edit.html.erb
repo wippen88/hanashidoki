@@ -1,4 +1,8 @@
 <div class="container">
+  <!-- viewで特定の名前を付与して、タイトルの内容を預ける -->
+  <%= content_for(:title, t(".title")) %>
+  
+  <h1><%= t('.title') %></h1>
   <%= form_with model: @status do |f| %>
     <div>
       <%= f.label t('.now_status') %>
