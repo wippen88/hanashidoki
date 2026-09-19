@@ -13,10 +13,12 @@
         <%= f.label t('.password') %>
         <%= f.password_field :password, class: "border border-solid form-control" %>
       </div>
-      <%= f.submit t('.login'), class: "btn btn-primary" %>
+      <%= f.submit t('.login'), class: "btn btn-primary border border-solid" %>
+      <%= link_to t('.create'), new_user_path, class: "border border-solid" %>
+
       <!-- 今後、パスワードリセット機能ができたときに実装したい 
       <div>
-      <%= link_to t('.to_register_page'), new_user_path %>
+      <%= link_to t('.create'), new_user_path %>
       <%= link_to t('.password_forget'), '#' %>
       </div>
       -->
