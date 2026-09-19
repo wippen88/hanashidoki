@@ -1,2 +1,12 @@
-<h1>Statuses#index</h1>
-<p>Find me in app/views/statuses/index.html.erb</p>
+<div class="container">
+  <!-- StatusesControllerで取得した各ユーザーの話しかけていいステータスを、ループで表示する -->
+  <% @statuses.each do |status| %>
+    <div>
+      <%= status.user.decorate.full_name %>
+      <!-- users_helperでモジュールを設定しているので、そこでステータスに紐づけたラベル名でステータスを表示 -->
+      <!-- status.rbにenumで指定したものにステータスさらに名前をつけた -->
+      <%= status_label(status.busy_status) %>
+      <%= status.status_message %>
+    </div>
+  <% end %>
+</div>
