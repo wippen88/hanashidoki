@@ -14,10 +14,11 @@ Rails.application.routes.draw do
   # ルートURLの割り当てをする
   root "static_pages#top"
   # ユーザーの新規作成（create）と入力画面を表示(new)のルートのみを生成
-  resources :users, only: %i[ new create ] do
-    # この話しかけてもいいよステータスが常にユーザーに紐づいているからネストしてる
-    resource :status
-  end
+  resources :users, only: %i[ new create ]
+
+  # コントローラーはusersディレクトリの下にあると明示することで、controllersディレクトリ配下のControllerを見に行かないようにする
+  resource :status, only: %i[ edit update ], controller: "users/statuses"
+
   # 全ユーザーのステータス画面は別で一覧を用意する
   resources :statuses, only: %i[ index ]
 
