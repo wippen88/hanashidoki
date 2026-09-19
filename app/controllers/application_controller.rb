@@ -31,8 +31,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # 各アクションを実行する前に、ログインしているかチェックする
+  # Application Controller内のアクションを実行する前に、ログインしているかチェックする
   def require_login
-    redirect_to login_path, danger: t('defaults.flash_message.require_login') unless logged_in?
+    redirect_to login_path, danger: t('flash_messages.require_login') unless logged_in?
   end
 end
