@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     # この話しかけてもいいよステータスが常にユーザーに紐づいているからネストしてる
     resource :status
   end
+  # 全ユーザーのステータス画面は別で一覧を用意する
+  resources :statuses, only: %i[ index ]
 
   # ログイン画面を表示するルート
   get "login", to: "user_sessions#new"
