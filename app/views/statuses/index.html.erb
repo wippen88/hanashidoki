@@ -2,11 +2,19 @@
   <!-- StatusesControllerで取得した各ユーザーの話しかけていいステータスを、ループで表示する -->
   <% @statuses.each do |status| %>
     <div>
-      <%= status.user.decorate.full_name %>
-      <!-- users_helperでモジュールを設定しているので、そこでステータスに紐づけたラベル名でステータスを表示 -->
-      <!-- status.rbにenumで指定したものにステータスさらに名前をつけた -->
-      <%= status_label(status.busy_status) %>
-      <%= status.status_message %>
+      <div>
+        <!-- デコレーターでフルネームを表示する -->
+        <%= status.user.decorate.full_name %>
+        <!-- users_helperでモジュールを設定しているので、そこでステータスに紐づけたラベル名でステータスを表示 -->
+        <!-- status.rbにenumで指定したものにステータスがあるので、さらに名前をつけた -->
+        <%= status_label(status.busy_status) %>
+        <%= status.status_message %>
+      </div>
+      <div>
+        <% if status.user == current_user %>
+        <%= link_to t('.status_edit'), edit_status_path %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
