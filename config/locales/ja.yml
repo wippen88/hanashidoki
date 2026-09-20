@@ -65,6 +65,8 @@ ja:
       status:
         status_message: 今の状況をひとこと
     errors:
+      messages:
+        taken: が登録できません
       models:
         # Userモデルの「エラー内容」を日本語にする
         user:

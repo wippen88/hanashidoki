@@ -6,10 +6,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <%= yield :head %>
-    
-    
+
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -18,7 +17,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     </head>
     
-  <body class="<%= yield(:body_class) %>">
+  <body class="<%= yield(:body_class) %> min-h-screen flex flex-col" >
     <!-- ログインをしていたら、ヘッダーを表示する -->
     <% if logged_in? %>
       <%= render "shared/header" %>

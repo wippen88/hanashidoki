@@ -35,7 +35,7 @@ body.edit_status {
 
 /* 入力欄の背景色は白色にする */
 input.form-control {
-  @apply bg-[#fff];
+  @apply bg-[#fff] border border-solid w-3xs;
 }
 
 /* トップページのボタンは背景色をなしにする（枠線は必要） */

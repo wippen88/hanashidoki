@@ -10,7 +10,7 @@
   <!-- statusをobjectという名前でパーシャルに渡す -->
   <%= render "shared/form_errors", object: @status %>
 
-  <h1><%= t('.title') %></h1>
+  <h1 class="text-3xl"><%= t('.title') %></h1>
   <%= form_with model: @status do |f| %>
     <div>
       <%= f.label t('.now_status') %>
