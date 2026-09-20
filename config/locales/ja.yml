@@ -2,11 +2,15 @@ ja:
   static_pages:
     top:
       title: ハナシドキ
+      to_status_index: ステータス一覧へ
       login: ログインする
       create: 新規登録する
       catchcopy: 「今、話しかけてもいい？」を、聞かなくてもわかる。
-      description_first: ハナシドキは、相手の今の状況をステータスで共有して、
-      description_second: 話しかけるタイミングを見つけやすくするアプリです。
+      description:
+        line1: ハナシドキは、相手の今の状況をステータスで共有して、
+        line2: 話しかけるタイミングを見つけやすくします。
+        line3: ちょっとした「話しかけたい」を、もっと気軽に。
+        line4: そんなきっかけをお手伝いします。
   flash_messages:
     require_login: ログインしてください
   user_sessions:
@@ -30,6 +34,7 @@ ja:
       password: パスワード
       password_confirmation: パスワード（確認用）
       registration: 登録する
+      to_top_page: トップページに戻る
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
@@ -81,4 +86,5 @@ ja:
             status_message:
               too_long: "は%{count}文字以内で入力してください"
   header:
+    title: ハナシドキ
     logout: ログアウトする
