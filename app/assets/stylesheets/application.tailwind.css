@@ -32,3 +32,7 @@ body.user_create_new,
 body.edit_status {
   @apply bg-[#eaf4fc];
 }
+
+input.form-control {
+  @apply bg-[#fff];
+}
