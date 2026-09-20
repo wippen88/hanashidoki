@@ -1,7 +1,11 @@
+<!-- viewで特定の名前を付与して、タイトルの内容を預ける -->
+<%= content_for(:title, t(".title")) %>
+
+<!-- ステータス編集画面のbodyタグの属性を指定 → application_html.erbに渡す -->
+<%= content_for(:body_class, "edit_status") %>
+
+
 <div class="container">
-  <!-- viewで特定の名前を付与して、タイトルの内容を預ける -->
-  <%= content_for(:title, t(".title")) %>
-  
   <!-- ステータスを更新するユーザーのバリデーションエラーを表示する -->
   <!-- statusをobjectという名前でパーシャルに渡す -->
   <%= render "shared/form_errors", object: @status %>
