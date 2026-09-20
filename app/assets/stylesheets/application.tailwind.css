@@ -33,6 +33,17 @@ body.edit_status {
   @apply bg-[#eaf4fc];
 }
 
+/* 入力欄の背景色は白色にする */
 input.form-control {
   @apply bg-[#fff];
+}
+
+/* トップページのボタンは背景色をなしにする（枠線は必要） */
+.top-page .button {
+  @apply inline-block text-center rounded-2xl border border-solid px-4 py-2 bg-transparent text-black;
+}
+
+/* class属性がbuttonの要素（class="button"）に統一のレイアウトを反映させる */
+.button {
+  @apply inline-block text-center rounded-2xl px-4 py-2 bg-[#1e50a2] text-white;
 }
