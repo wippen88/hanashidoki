@@ -1,6 +1,9 @@
 <!-- viewで特定の名前を付与して、タイトルの内容を預ける -->
 <%= content_for(:title, t(".title")) %>
 
+<!-- ログイン画面のbodyタグの属性を指定 → application_html.erbに渡す -->
+<%= content_for(:body_class, "user_sessions_new") %>
+
 <div class="container">
   <div>
     <h1><%= t('.title') %></h1>
