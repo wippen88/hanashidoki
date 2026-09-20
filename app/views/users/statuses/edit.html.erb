@@ -2,6 +2,10 @@
   <!-- viewで特定の名前を付与して、タイトルの内容を預ける -->
   <%= content_for(:title, t(".title")) %>
   
+  <!-- ステータスを更新するユーザーのバリデーションエラーを表示する -->
+  <!-- statusをobjectという名前でパーシャルに渡す -->
+  <%= render "shared/form_errors", object: @status %>
+
   <h1><%= t('.title') %></h1>
   <%= form_with model: @status do |f| %>
     <div>
