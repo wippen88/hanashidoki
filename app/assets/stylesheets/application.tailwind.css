@@ -8,20 +8,27 @@ body, input, button, select, textarea {
   font-size: 1.2rem;
 }
 
+/* トップページの背景を円形のグラデーションにする */
 body.top-page {
   background: radial-gradient(
-    /* closest-side, */
+    /* グラデーションは左端から40pxと上端から４０pxのところを基準とし、中心から一番遠い角まで届くサイズにする */
     farthest-corner at 40px 40px,
+    /* クリーム色、珊瑚色、白群の順でグラデーションさせる　*/
     #ffffcc,
     #f5c9c4,
     #7ec6cc
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
+    );
+    /* 高さは表示領域いっぱいに広げ背景の繰り返しは行わない */
+    background-repeat: no-repeat;
+    /* 背景画像（または背景グラデーション）を、要素全体が埋まるように拡大・縮小する */
+    background-size: cover;
+    min-height: 100vh;
 }
 
-/* class属性がbuttonの要素（class="button"）に統一のレイアウトを反映させる */
-.button {
-  @apply border border-solid px-4 py-2;
+/* トップページ以外の背景を月白にする */
+body.index,
+body.user_sessions_new,
+body.user_create_new,
+body.edit_status {
+  @apply bg-[#eaf4fc];
 }
