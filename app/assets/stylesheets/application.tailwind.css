@@ -20,3 +20,8 @@ body.top-page {
   background-size: cover;
   min-height: 100vh;
 }
+
+/* class属性がbuttonの要素（class="button"）に統一のレイアウトを反映させる */
+.button {
+  @apply border border-solid px-4 py-2;
+}
