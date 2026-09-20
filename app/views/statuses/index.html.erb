@@ -1,7 +1,10 @@
-<div class="container">
-  <!-- viewで特定の名前を付与して、タイトルの内容を預ける -->
-  <%= content_for(:title, t(".title")) %>
+<!-- viewで特定の名前を付与して、タイトルの内容を預ける -->
+<%= content_for(:title, t(".title")) %>
 
+<!-- ステータス一覧のbodyタグの属性を指定 → application_html.erbに渡す -->
+<%= content_for(:body_class, "index") %>
+
+<div class="container">
   <h1><%= t('.title') %></h1>
 
   <!-- StatusesControllerで取得した各ユーザーの話しかけていいステータスを、ループで表示する -->
