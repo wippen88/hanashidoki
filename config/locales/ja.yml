@@ -35,6 +35,8 @@ ja:
       password_confirmation: パスワード（確認用）
       registration: 登録する
       to_top_page: トップページに戻る
+      placeholder:
+        last_name: 例：田中
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
