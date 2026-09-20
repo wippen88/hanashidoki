@@ -1,7 +1,7 @@
 <!-- フォームのバリデーションエラーがある場合に、エラーメッセージを表示する -->
 <!-- object.errors.any? は、エラーがありますか？というイメージ -->
 <% if object.errors.any? %>
-  <div class="bg-red-100 text-red-700 px-4 py-2 rounded-md mb-4">
+  <div class="bg-red-100 text-red-700 text-center px-4 py-2 rounded-md mb-4 w-screen">
     <% object.errors.full_messages.each do |message| %>
       <p><%= message %></p>
     <% end %>
