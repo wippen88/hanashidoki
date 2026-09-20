@@ -1,14 +1,22 @@
-<!-- トップページのbodyタグの属性を指定 → application_html.erbに渡す -->
-<%= content_for(:body_class, "top-page") %>
+<div class="container min-w-screen flex flex-col flex-1 justify-center items-center">
+  <!-- トップページのbodyタグの属性を指定 → application_html.erbに渡す -->
+  <%= content_for(:body_class, "top-page") %>
 
-<div class="container min-w-screen">
-  <div class="min-h-screen flex flex-col justify-center items-center">
+  <div class="flex flex-col justify-center items-center">
     <p class="text-center text-5xl mb-16"><%= t('.catchcopy') %></p>
-    <p class="text-center text-4xl"><%= t('.description_first') %></p>
-    <p class="text-center text-4xl"><%= t('.description_second') %></p>
-    <div class="mt-10 flex gap-8">
+    <p class="text-center text-4xl"><%= t('.description.line1') %></p>
+    <p class="text-center text-4xl"><%= t('.description.line2') %></p>
+  </div>
+  <div class="flex flex-col justify-center items-center mt-10">
+    <p class="text-center text-4xl"><%= t('.description.line3') %></p>
+    <p class="text-center text-4xl"><%= t('.description.line4') %></p>
+  </div>
+  <div class="mt-10 flex gap-8 justify-center items-center">
+    <% if logged_in? %>
+      <%= link_to t('.to_status_index'), statuses_path, class:"button" %>
+    <% else %>
       <%= link_to t('.login'), login_path, class: "button" %>
       <%= link_to t('.create'), new_user_path, class: "button" %>
-    </div>
-    </div>
+    <% end %>
+  </div>
 </div>
