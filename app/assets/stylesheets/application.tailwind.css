@@ -1,1 +1,9 @@
+/* 先にフォントを読み込ませたいので、フォントURLを上に置く */
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
 @import "tailwindcss";
+
+/* アプリ全体のベースとフォーム部品に一括適用 */
+body, input, button, select, textarea {
+  font-family: "Kiwi Maru", sans-serif;
+  font-size: 1.2rem;
+}
