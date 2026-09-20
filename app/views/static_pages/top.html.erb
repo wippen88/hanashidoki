@@ -3,9 +3,10 @@
 
 <div class="container min-w-screen">
   <div class="min-h-screen flex flex-col justify-center items-center">
+    <p class="text-center text-5xl mb-16"><%= t('.catchcopy') %></p>
     <p class="text-center text-4xl"><%= t('.description_first') %></p>
     <p class="text-center text-4xl"><%= t('.description_second') %></p>
-    <div class="mt-4">
+    <div class="mt-10 flex gap-8">
       <%= link_to t('.login'), login_path, class: "button" %>
       <%= link_to t('.create'), new_user_path, class: "button" %>
     </div>
