@@ -17,7 +17,7 @@
       </div>
       <div>
         <% if status.user == current_user %>
-        <%= link_to t('.status_edit'), edit_status_path %>
+        <%= link_to t('.status_edit'), edit_status_path class: "button" %>
         <% end %>
       </div>
     </div>
