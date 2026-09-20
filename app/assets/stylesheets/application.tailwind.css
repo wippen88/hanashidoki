@@ -7,3 +7,16 @@ body, input, button, select, textarea {
   font-family: "Kiwi Maru", sans-serif;
   font-size: 1.2rem;
 }
+
+body.top-page {
+  background: radial-gradient(
+    /* closest-side, */
+    farthest-corner at 40px 40px,
+    #ffffcc,
+    #f5c9c4,
+    #7ec6cc
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
