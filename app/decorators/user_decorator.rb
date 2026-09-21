@@ -5,7 +5,7 @@ class UserDecorator < Draper::Decorator
 
   # viewで、姓名の情報を用いてフルネームで表示できるようにする
   def full_name
-    "#{object.last_name} #{object.first_name}"
+    "#{object.last_name} #{object.first_name}さん"
   end
 
   # Define presentation-specific methods here. Helpers are accessed through
