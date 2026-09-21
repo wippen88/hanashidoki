@@ -8,9 +8,9 @@
   <h1 class="text-3xl text-center m-10"><%= t('.title') %></h1>
 
   <!-- StatusesControllerで取得した各ユーザーの話しかけていいステータスを、ループで表示する -->
-  <div class="grid grid-cols-3 gap-20 min-h-70">
+  <div class="grid grid-cols-3 gap-20">
     <% @statuses.each do |status| %>
-      <div class="shadow-[20px_20px_5px_#ffffcc] justify-center items-center bg-white w-full flex flex-col rounded-e-full">
+      <div class="min-h-70 shadow-[20px_20px_5px_#ffffcc] justify-center items-center bg-white w-full flex flex-col rounded-e-full">
         <div class="mb-2">
           <!-- デコレーターでフルネームを表示する -->
           <%= status.user.decorate.full_name %>
