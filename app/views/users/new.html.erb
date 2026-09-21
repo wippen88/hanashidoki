@@ -35,7 +35,7 @@
         <%= f.password_field :password_confirmation, class: "form-control" %>
       </div>
       <div class="flex gap-6 mt-4 justify-center">
-        <%= f.submit i18n.t('registration'), class: "button" %>
+        <%= f.submit i18n.t('registration'), class: "button w-full md:w-auto lg:w-auto" %>
       </div>
     <% end %>
     <%= link_to i18n.t('to_top_page'), root_path, class: "underline text-xl" %>

@@ -21,12 +21,12 @@
     </p>
     <p class="text-center text-xl md:text-3xl lg:text-4xl"><%= t('.description.line7') %></p>
   </div>
-  <div class="mt-10 flex flex-col gap-8 md:flex-row gap-8 place-items-center lg:flex-row gap-8 place-items-center">
+  <div class="mt-10 flex flex-col gap-8 place-items-center md:flex-row lg:flex-row">
     <% if logged_in? %>
-      <%= link_to t('.to_status_index'), statuses_path, class:"button" %>
+      <%= link_to t('.to_status_index'), statuses_path, class:"top-page-buttons" %>
     <% else %>
-      <%= link_to t('.login'), login_path, class: "button" %>
-      <%= link_to t('.create'), new_user_path, class: "button" %>
+      <%= link_to t('.login'), login_path, class: "top-page-buttons" %>
+      <%= link_to t('.create'), new_user_path, class: "top-page-buttons" %>
     <% end %>
   </div>
 </div>

@@ -44,11 +44,11 @@ input.form-control {
 }
 
 /* トップページのボタンは背景色をなしにする（枠線は必要） */
-.top-page .button {
-  @apply inline-block text-center rounded-2xl border border-solid px-4 py-2 bg-transparent text-black;
+.top-page-buttons {
+  @apply inline-block text-xl text-center rounded-2xl border border-solid px-4 py-2 bg-transparent text-black;
 }
 
 /* class属性がbuttonの要素（class="button"）に統一のレイアウトを反映させる */
 .button {
-  @apply inline-block text-center rounded-2xl px-4 py-2 bg-[#1e50a2] text-white;
+  @apply inline-block text-xl text-center rounded-2xl px-4 py-2 bg-[#1e50a2] text-white;
 }
