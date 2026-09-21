@@ -5,12 +5,17 @@ ja:
       to_status_index: ステータス一覧へ
       login: ログインする
       create: 新規登録する
-      catchcopy: 「今、話しかけてもいい？」を、聞かなくてもわかる。
+      catchcopy:
+        line1: 「今、話しかけてもいい？」を、
+        line2: 聞かなくてもわかる。
       description:
-        line1: ハナシドキは、相手の今の状況をステータスで共有して、
-        line2: 話しかけるタイミングを見つけやすくします。
-        line3: ちょっとした「話しかけたい」を、もっと気軽に。
-        line4: そんなきっかけをお手伝いします。
+        line1: ハナシドキは、相手の今の状況を
+        line2: ステータスで共有して、
+        line3: 話しかけるタイミングを
+        line4: 見つけやすくします。
+        line5: ちょっとした「話しかけたい」を、
+        line6: もっと気軽に。
+        line7: そんなきっかけをお手伝いします。
   flash_messages:
     require_login: ログインしてください
   user_sessions:
