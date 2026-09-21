@@ -4,31 +4,36 @@
 <!-- ステータス編集画面のbodyタグの属性を指定 → application_html.erbに渡す -->
 <%= content_for(:body_class, "edit_status") %>
 
+<!-- ステータスを更新するユーザーのバリデーションエラーを表示する -->
+<!-- statusをobjectという名前でパーシャルに渡す -->
+<%= render "shared/form_errors", object: @status %>
 
-<div class="container">
-  <!-- ステータスを更新するユーザーのバリデーションエラーを表示する -->
-  <!-- statusをobjectという名前でパーシャルに渡す -->
-  <%= render "shared/form_errors", object: @status %>
-
-  <h1 class="text-3xl"><%= t('.title') %></h1>
-  <%= form_with model: @status do |f| %>
-    <div>
-      <%= f.label t('.now_status') %>
-      <!-- Status.busy_statuses（enumの中身すべてを取得する書き方）の中身はハッシュなので、引数は2つ指定 -->
-      <!--  {"available" => 0, "slightly_available" => 1, "busy" => 2, "away" => 3} -->
-      <% Status.busy_statuses.each_key do |key| %>
-        <!-- busy_statusにkeyを値として設定するラジオボタン -->
-        <%= f.radio_button :busy_status, key %>
-        <!-- ラジオボタンのラベルは、users_helperに記載したstatus_labelメソッドから引っ張ってくる -->
-        <%= f.label key, status_label(key) %>
-      <% end %>
-    </div>
-    <div>
-      <%= f.label t('.status_message') %>
-      <%= f.text_area :status_message, class: "button" %>
-    </div>
-    <div>
-        <%= f.submit t('.status_change'), class: "button" %>
-    </div>
-  <% end %>
+<div class="container mx-auto">
+  <div class="flex flex-col items-center">
+    <h1 class="text-3xl text-center m-10"><%= t('.title') %></h1>
+    <%= form_with model: @status do |f| %>
+      <div>
+        <%= f.label t('.now_status'), class: "text-xl flex flex-col" %>
+        <!-- Status.busy_statuses（enumの中身すべてを取得する書き方）の中身はハッシュなので、引数は2つ指定 -->
+        <!--  {"available" => 0, "slightly_available" => 1, "busy" => 2, "away" => 3} -->
+      </div>
+      <div class="flex flex-row gap-4">
+        <% Status.busy_statuses.each_key do |key| %>
+          <div class>
+          <!-- busy_statusにkeyを値として設定するラジオボタン -->
+          <%= f.radio_button :busy_status, key %>
+          <!-- ラジオボタンのラベルは、users_helperに記載したstatus_labelメソッドから引っ張ってくる -->
+          <%= f.label key, status_label(key) %>
+          </div>
+        <% end %>
+      </div>
+      <div class="flex flex-col mt-3">
+        <%= f.label t('.status_message'), class: "mb-1 text-xl" %>
+        <%= f.text_area :status_message, class: "min-h-30 w-xs bg-white border border-solid" %>
+      </div>
+      <div class="flex justify-center">
+        <%= f.submit t('.status_change'), class: "mt-8 button" %>
+      </div>
+    <% end %>
+  </div>
 </div>
