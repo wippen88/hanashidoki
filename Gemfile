@@ -43,7 +43,7 @@ gem 'sorcery'
 gem "json", "2.7.2"
 
 # 「View（画面）に関する表示ロジック」をモデルから切り離してきれいに整理するため、デコレーターを導入する
-gem "draper", "4.0.2"
+gem "draper", "4.0.6"
 
 
 group :development, :test do
