@@ -35,7 +35,7 @@ body.edit_status {
 
 /* 入力欄の背景色は白色にする */
 input.form-control {
-  @apply bg-[#fff] border border-solid w-2xs;
+  @apply bg-[#fff] border border-solid;
 }
 
 /* フォームに入力するときに表示されるプレースホルダーは、入力欄にフォーカス（クリックして入力状態）したときに色が濃くなるようにする */
