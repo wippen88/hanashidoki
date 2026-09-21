@@ -39,6 +39,7 @@ ja:
         last_name: 例：田中
         first_name: 例：花子
         email: 例：example@example.com
+        password: 3文字以上
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
