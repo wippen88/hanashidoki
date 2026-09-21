@@ -4,25 +4,33 @@
 <!-- ステータス一覧のbodyタグの属性を指定 → application_html.erbに渡す -->
 <%= content_for(:body_class, "index") %>
 
-<div class="container">
-  <h1><%= t('.title') %></h1>
+<div class="container mx-auto">
+  <h1 class="text-3xl text-center m-10"><%= t('.title') %></h1>
 
   <!-- StatusesControllerで取得した各ユーザーの話しかけていいステータスを、ループで表示する -->
-  <% @statuses.each do |status| %>
-    <div>
-      <div>
-        <!-- デコレーターでフルネームを表示する -->
-        <%= status.user.decorate.full_name %>
-        <!-- users_helperでモジュールを設定しているので、そこでステータスに紐づけたラベル名でステータスを表示 -->
-        <!-- status.rbにenumで指定したものにステータスがあるので、さらに名前をつけた -->
-        <%= status_label(status.busy_status) %>
-        <%= status.status_message %>
+  <div class="grid grid-cols-3 gap-20 min-h-70">
+    <% @statuses.each do |status| %>
+      <div class="shadow-[20px_20px_5px_#ffffcc] justify-center items-center bg-white w-full flex flex-col rounded-e-full">
+        <div class="mb-2">
+          <!-- デコレーターでフルネームを表示する -->
+          <%= status.user.decorate.full_name %>
+        </div>
+        <div>
+          <div class="text-center">
+            <!-- users_helperでモジュールを設定しているので、そこでステータスに紐づけたラベル名でステータスを表示 -->
+            <!-- status.rbにenumで指定したものにステータスがあるので、さらに名前をつけた -->
+            <%= status_label(status.busy_status) %>
+          </div>
+          <div class="flex flex-wrap justify-center p-6 pt-0">
+            <%= simple_format(status.status_message) %>
+          </div>
+        </div>
+          <div>
+          <% if status.user == current_user %>
+            <%= link_to t('.status_edit'), edit_status_path, class: "button" %>
+          <% end %>
+        </div>
       </div>
-      <div>
-        <% if status.user == current_user %>
-        <%= link_to t('.status_edit'), edit_status_path, class: "button" %>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
