@@ -1,8 +1,11 @@
 <header>
   <nav class="bg-[#80989b] px-4 py-3">
-    <div class="flex justify-between ">
+    <div class="flex justify-between">
       <%= link_to t('header.title'), root_path, class:"text-3xl drop-shadow-[3px_3px_2px_#f5c9c4]" %>
-      <%= link_to t('header.logout'), logout_path, class:"button", data: {turbo_method: :delete} %>  
+      <div class="">
+        <%= current_user.decorate.full_name %>
+        <%= link_to t('header.logout'), logout_path, class:"ml-6 button", data: {turbo_method: :delete} %>  
+      </div>
     </div>
   </nav>
 </header>
