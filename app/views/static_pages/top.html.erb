@@ -2,16 +2,26 @@
   <!-- トップページのbodyタグの属性を指定 → application_html.erbに渡す -->
   <%= content_for(:body_class, "top-page") %>
 
-  <div class="flex flex-col justify-center items-center">
-    <p class="text-center text-5xl mb-16"><%= t('.catchcopy') %></p>
-    <p class="text-center text-4xl"><%= t('.description.line1') %></p>
-    <p class="text-center text-4xl"><%= t('.description.line2') %></p>
+  <!-- スマホとタブレットでは切りが良いところで折り返すようにする -->
+  <!-- PCでは1文で表示する -->
+  <div class="flex flex-col w-screen md:place-items-center lg:place-items-center">
+    <p class="text-center text-2xl md:text-4xl lg:text-5xl mb-16">
+      <%= t('.catchcopy.line1') %><br class="lg:hidden"><%= t('.catchcopy.line2') %>
+    </p>
+    <p class="text-center text-xl md:text-3xl lg:text-4xl">
+      <%= t('.description.line1') %><br class="lg:hidden"><%= t('.description.line2') %>
+    </p>
+    <p class="text-center text-xl md:text-3xl lg:text-4xl">
+      <%= t('.description.line3') %><br class="md:hidden lg:hidden"><%= t('.description.line4') %>
+    </p>
   </div>
   <div class="flex flex-col justify-center items-center mt-10">
-    <p class="text-center text-4xl"><%= t('.description.line3') %></p>
-    <p class="text-center text-4xl"><%= t('.description.line4') %></p>
+    <p class="text-center text-xl md:text-3xl lg:text-4xl">
+      <%= t('.description.line5') %><br class="md:hidden lg:hidden"><%= t('.description.line6') %>
+    </p>
+    <p class="text-center text-xl md:text-3xl lg:text-4xl"><%= t('.description.line7') %></p>
   </div>
-  <div class="mt-10 flex gap-8 justify-center items-center">
+  <div class="mt-10 flex flex-col gap-8 md:flex-row gap-8 place-items-center lg:flex-row gap-8 place-items-center">
     <% if logged_in? %>
       <%= link_to t('.to_status_index'), statuses_path, class:"button" %>
     <% else %>
