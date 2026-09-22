@@ -12,10 +12,10 @@ class UserSessionsController < ApplicationController
 
     if login(params[:email], params[:password])
       # session[:user_id] = @user.id
-      redirect_to statuses_path, success: t('.success')
+      redirect_to statuses_path, success: t(".success")
     else
       # renderは、別のアクションを経由せず、指定したViewを表示する（アクション自体は実行しない）
-      flash.now[:danger] = t('.failure')
+      flash.now[:danger] = t(".failure")
       render :new, status: :unprocessable_entity
     end
   end
@@ -25,6 +25,6 @@ class UserSessionsController < ApplicationController
     logout
     # see_other → 別のURLを見に行ってね。そのときはGETで取得してね
     # 次のページへのリダイレクトをGETに切り替えることで、同じPOST処理をもう一度送信するような状況を避けやすくする
-    redirect_to root_path, status: :see_other, success: t('.success')
+    redirect_to root_path, status: :see_other, success: t(".success")
   end
 end

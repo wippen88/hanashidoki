@@ -37,7 +37,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # 認証機能sorceryを追加
-gem 'sorcery'
+gem "sorcery"
 
 # jsonのバージョンを2.7.2に設定→指定しないと3.0.2になる
 gem "json", "2.7.2"

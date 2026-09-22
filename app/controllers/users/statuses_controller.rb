@@ -12,10 +12,10 @@ class Users::StatusesController < ApplicationController
     @status = current_user.status
     # Statusの更新に成功したら、Status一覧画面にリダイレクトする
     if @status.update(status_params)
-      redirect_to statuses_path, success: t('.success', item: Status.model_name.human)
+      redirect_to statuses_path, success: t(".success", item: Status.model_name.human)
     else
       # 更新に失敗した場合はエラーメッセージを表示して編集画面を再表示する
-      flash.now[:danger] = t('.failure', item: Status.model_name.human)
+      flash.now[:danger] = t(".failure", item: Status.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end

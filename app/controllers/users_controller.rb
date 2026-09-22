@@ -10,16 +10,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+
     if @user.save
       # 登録した瞬間から、このブラウザではログイン済みとする
       auto_login(@user)
 
       # ユーザーの登録に成功したら、全ユーザーのステータス一覧へ遷移する
-      redirect_to statuses_path, success:t('.success')
+      redirect_to statuses_path, success: t(".success")
     else
       # ユーザー登録に失敗したら画面は遷移せずに、HTTPリクエストを200（成功）から422(内容の不備によるエラー)にに変更する
-      flash.now[:danger] = t('.failure')
+      flash.now[:danger] = t(".failure")
       render :new, status: :unprocessable_entity
     end
   end
@@ -31,5 +31,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
-
 end

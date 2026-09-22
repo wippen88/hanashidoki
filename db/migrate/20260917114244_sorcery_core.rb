@@ -17,7 +17,7 @@ class SorceryCore < ActiveRecord::Migration[7.2]
 
       # 入力してもらう一言メッセージ欄（空欄可）
       t.string :status_message, limit: 30
-      t.timestamps                null: false
+      t.timestamps null: false
     end
   end
 end

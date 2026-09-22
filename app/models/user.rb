@@ -10,7 +10,7 @@ class User < ApplicationRecord
   after_create :create_default_status
 
   # Emailアドレス、姓名、ステータスは必須項目（空欄を許さない）
-  validates :email, presence: true , uniqueness: true
+  validates :email, presence: true, uniqueness: true
   validates :last_name, presence: true
   validates :first_name, presence: true
 
