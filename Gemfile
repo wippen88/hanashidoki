@@ -40,7 +40,7 @@ gem "bootsnap", require: false
 gem "sorcery"
 
 # jsonのバージョンを2.7.2に設定→指定しないと3.0.2になる
-gem "json", "2.7.2"
+gem "json", "3.0.2"
 
 # 「View（画面）に関する表示ロジック」をモデルから切り離してきれいに整理するため、デコレーターを導入する
 gem "draper", "4.0.2"
