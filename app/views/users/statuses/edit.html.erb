@@ -23,7 +23,7 @@
           <!-- busy_statusにkeyを値として設定するラジオボタン -->
           <%= f.radio_button :busy_status, key %>
           <!-- ラジオボタンのラベルは、users_helperに記載したstatus_labelメソッドから引っ張ってくる -->
-          <%= f.label key, status_label(key) %>
+          <%= f.label :busy_status, status_label(key), value: key %>
           </div>
         <% end %>
       </div>
