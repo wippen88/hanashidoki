@@ -3,9 +3,9 @@ FROM ruby:3.4.8
 
 # 環境変数の設定
 # 日本語対応
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 # タイムゾーンを日本に設定
-ENV TZ Asia/Tokyo 
+ENV TZ=Asia/Tokyo 
 
 # 必要なパッケージのインストール
 # apt-key非推奨になっているコマンドなので、Node.jsと同じように、Yarnの鍵も gpg --dearmor を使った新しい方式に書き換える（ロボらんてくんのアドバイス）
@@ -26,5 +26,18 @@ WORKDIR /myapp
 # Bundlerのインストール
 RUN gem install bundler
 
+# Gemfile を先にコピーしてbundle installを実行(キャッシュ効率化のため)
+COPY Gemfile Gemfile.lock /myapp/
+RUN bundle install
+
 # アプリケーションのコードをコピー
 COPY . /myapp
+
+# アセットのプリコンパイル(本番環境用)
+RUN SECRET_KEY_BASE=DUMMY bundle exec rails assets:precompile
+
+# ポート3000を開放
+EXPOSE 3000
+
+# コンテナ起動時に実行するコマンド
+CMD ["bin/rails", "server", "-b", "0.0.0.0"]
