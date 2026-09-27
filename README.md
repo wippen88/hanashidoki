@@ -39,3 +39,32 @@ RUNTEQで学習した内容の復習も兼ねて、今回はログイン機能�
 
 ## 開発期間
 約1週間
+
+
+## Renderでのマイグレーション自動実行について
+
+### 問題
+Render無料プランではShellアクセス機能が使えず、マイグレーションを手動実行できない
+
+### 原因
+無料プランではSSHやShellでのコンテナへの直接アクセスが提供されていないため
+
+### 解決策
+Docker CommandにShell Scriptを設定し、起動時にマイグレーションを自動実行させる
+
+### 実際の設定
+- Docker Command: `sh bin/render-start.sh`
+- bin/render-start.sh の内容:
+  ```bash
+  #!/bin/bash
+  set -e   # コマンドが失敗したら、それ以降の処理を止める
+
+  # 未実行のマイグレーションを適用する
+  bundle exec rails db:migrate
+
+  # Renderが割り当てたポートでRailsサーバーを起動する
+  bundle exec rails server -b 0.0.0.0 -p $PORT
+  ```
+
+### 注意点
+毎回の起動時に実行されるため、マイグレーションの内容によっては起動時間が伸びる可能性がある
