@@ -10,7 +10,7 @@
   <!-- StatusesControllerで取得した各ユーザーの話しかけていいステータスを、ループで表示する -->
   <div class="grid md:grid-cols-2 lg:grid-cols-3 px-10 gap-15 md:gap-15 lg:gap-15">
     <% @statuses.each do |status| %>
-      <div class="min-h-100 lg:min-h-90 xl:min-h-80 shadow-[15px_15px_5px_#ffffcc] justify-center items-center bg-white w-full flex flex-col rounded-e-4xl md:rounded-e-[70px] xl:rounded-e-full">
+      <div class="min-h-100 lg:min-h-90 xl:min-h-80 shadow-[15px_15px_5px_#ffffcc] justify-center items-center bg-white w-full flex flex-col rounded-e-4xl md:rounded-e-[100px] xl:rounded-e-full">
         <div class="mb-2">
           <!-- デコレーターでフルネームを表示する -->
           <%= status.user.decorate.full_name %>
