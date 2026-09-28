@@ -1,4 +1,7 @@
 ja:
+  time:
+    formats:
+      long: "%Y年%-m月%-d日(%a) %H時%M分"
   static_pages:
     top:
       title: ハナシドキ
@@ -63,6 +66,7 @@ ja:
     index:
       title: ステータス一覧
       status_edit: 編集する
+      updated_time: 最終更新：
   activerecord:
     attributes:
       # Userモデルの「項目名」を日本語にする
