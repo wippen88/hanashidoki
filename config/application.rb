@@ -27,6 +27,9 @@ module Myapp
     # 日本語をデフォルトにする
     config.i18n.default_locale = :ja
 
+    # タイムゾーンは日本時間をデフォルトにする
+    config.time_zone = "Tokyo"
+
     # Don't generate system test files.
     config.generators.system_tests = nil
     # 不要なファイルが生成されるのを防ぎ、開発効率を向上させる
