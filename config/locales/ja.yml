@@ -1,4 +1,13 @@
 ja:
+  # 曜日の日本語化対応
+  date:
+    abbr_day_names: [日, 月, 火, 水, 木, 金, 土]
+  # 時間形式の日本語化対応
+  time:
+    formats:
+      date: "%Y年%-m月%-d日(%a)"
+      time: "%H時%M分"
+      long: "%Y年%-m月%-d日(%a) %H時%M分"
   static_pages:
     top:
       title: ハナシドキ
@@ -63,6 +72,7 @@ ja:
     index:
       title: ステータス一覧
       status_edit: 編集する
+      updated_time: 最終更新：
   activerecord:
     attributes:
       # Userモデルの「項目名」を日本語にする
